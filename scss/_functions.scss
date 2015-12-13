@@ -10,7 +10,7 @@
 /// Convert pixels to ems
 ///
 /// @param {Number (px)} $tipo-px - size in pixels
-/// @param $tipo-context {Number (px)} [$tipo-fs0] - context in pixels
+/// @param {Number (px)} $tipo-context [$tipo-fs0] - context in pixels
 ///
 /// @return {Number (em)} équivalence en `ems` retournée.
 @function tipo-em($tipo-px, $tipo-context: $tipo-fs0) {
@@ -37,11 +37,11 @@
 
 /// Convert pixels to percentages
 ///
-/// @param {} $tipo-px: variable en pixels passée en paramètre
-/// @param {} $tipo-context: context de travail en pixels (par défaut égal à la largeur du conteneur principal)
+/// @param {} $tipo-px - variable en pixels passée en paramètre
+/// @param {} $tipo-context [$tipo-fs0] - context in pixels
 ///
 /// @return {Number (%)} équivalence en pourcentage retournée.
-@function tipo-pourcent($tipo-px, $tipo-context: tipo-grid-cols-width($tipo-cols-desktop)) {
+@function tipo-pourcent($tipo-px, $tipo-context: $tipo-fs0) {
   @return(tipo-strip-unit($tipo-px) * 100 / tipo-strip-unit($tipo-context) * 1%);
 }
 
