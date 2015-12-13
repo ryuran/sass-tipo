@@ -1,0 +1,52 @@
+# ENVIRONNEMENT GLOBAL
+# -----------------------------------------------------------------------------
+# Pour être sur que le fichier .gitignore n'est jamais ignorer lui-même.
+!.gitignore
+
+
+# SASS
+# -----------------------------------------------------------------------------
+# Ignorer le cache de Sass
+.sass-cache
+
+# Ignorer la configuration interne de Bunler
+.bundle
+
+# Ignorer les gems instalées avec le projet
+# N'hésitez pas à adpater le nom du dossier à vos propre habitudes
+.gems
+
+
+# MODULES TIERS
+# -----------------------------------------------------------------------------
+# Ignorer les modules nodes
+node_modules
+
+# PROJET
+# -----------------------------------------------------------------------------
+# Ignorer les bibliothèques JS tiers placé dans les sources...
+src/js/lib/*
+# ...sauf si c'est pas dans npm
+!src/js/lib/jquery.ba-throttle-debounce.js
+!src/js/lib/jquery.onscreen.js
+!src/js/lib/logger.js
+!src/js/lib/jquery.sticky-kit.js
+# Ignorer les templates comilés
+src/js/**/*templates.js
+
+# Ignorer le build
+build
+
+# Ignorer la config sftp
+.ftppass
+
+# Ignorer le cache des modules Grunt
+.tmp
+/.idea
+
+npm-debug.log
+
+# SYSTEM SPECIFIC : OSX
+# -----------------------------------------------------------------------------
+.DS_Store
+

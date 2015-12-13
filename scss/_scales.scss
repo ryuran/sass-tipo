@@ -1,0 +1,54 @@
+/// Taille des échelles
+$tipo-amplitude: 10 !default;
+
+// Première échelle typographique
+$tipo-scale1: $tipo-number1;
+
+// Seconde échelle typographique
+$tipo-scale2: $tipo-number2;
+
+
+// On calcule dans un premier temps les deux échelles.
+$tipo-i: 0;
+
+@while $tipo-i < $tipo-amplitude {
+  $tipo-next1: nth($tipo-scale1, length($tipo-scale1)) / $tipo-ratio;
+  $tipo-next2: nth($tipo-scale2, length($tipo-scale2)) / $tipo-ratio;
+
+  $tipo-prev1: nth($tipo-scale1, 1) * $tipo-ratio;
+  $tipo-prev2: nth($tipo-scale2, 1) * $tipo-ratio;
+
+  $tipo-scale1: join($tipo-scale1, $tipo-next1);
+  $tipo-scale2: join($tipo-scale2, $tipo-next2);
+
+  $tipo-scale1: join($tipo-prev1, $tipo-scale1);
+  $tipo-scale2: join($tipo-prev2, $tipo-scale2);
+
+  $tipo-i: $tipo-i + 1;
+}
+
+// Puis elles sont fusionnées, triées et les doublons sont supprimés.
+
+$tipo-scale: tipo-sort(join($tipo-scale1, $tipo-scale2));
+
+$tipo-roundscale: ();
+
+@each $tipo-step in $tipo-scale {
+  $tipo-roundscale: join($tipo-roundscale, round($tipo-step));
+}
+
+$tipo-scale: $tipo-roundscale;
+$tipo-scale: tipo-uniq($tipo-scale);
+
+// Des variables sont crées pour pouvoir être réutilisés plus facilement dans le projet.
+$tipo-h1:      tipo-scale( 8) !default;
+$tipo-h2:      tipo-scale( 7) !default;
+$tipo-h3:      tipo-scale( 6) !default;
+$tipo-h4:      tipo-scale( 5) !default;
+$tipo-h5:      tipo-scale( 4) !default;
+$tipo-h6:      tipo-scale( 3) !default;
+$tipo-bigger:  tipo-scale( 2) !default;
+$tipo-big:     tipo-scale( 1) !default;
+$tipo-body:    tipo-scale( 0) !default;
+$tipo-small:   tipo-scale(-1) !default;
+$tipo-smaller: tipo-scale(-2) !default;

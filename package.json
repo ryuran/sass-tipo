@@ -1,0 +1,29 @@
+{
+  "name": "sass-mq",
+  "description": "mq() is a Sass mixin that helps manipulating media queries in an elegant way.",
+  "version": "0.0.0",
+  "keywords": [
+    "sass"
+  ],
+  "ignore": [],
+  "files": [
+    "scss/_tipo.scss",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/ryuran/tipo/issues"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/ryuran/tipo.git"
+    }
+  ],
+  "license": "unlicense",
+  "homepage": "http://ryuran.github.io/tipo/",
+  "devDependencies": {
+    "sassdoc": "^2.1.18"
+  }
+}
