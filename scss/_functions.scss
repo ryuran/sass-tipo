@@ -135,12 +135,12 @@
         $equal: append($equal, $item);
       } @else if ($item < $seed) {
         $less: append($less, $item);
-      } @else if ($item > $SEED) {
+      } @else if ($item > $seed) {
         $large: append($large, $item);
       }
     }
 
-    @return join(join(quick-sort($less, $order), $equal), quick-sort($large, $order));
+    @return join(join(tipo-sort($less), $equal), tipo-sort($large));
   }
 
   @return $list;
