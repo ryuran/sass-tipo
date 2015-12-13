@@ -1,9 +1,9 @@
 /// Font size and line height on the vertical rythm
 ///
 /// @param {Number (px)} $tipo-fs - font-size in pixels
-/// @param {String} $tipo-unit [$tipo-prefered-unit] - unit of return font-size
+/// @param {String} $tipo-unit [$tipo-default-unit] - unit of return font-size
 /// @param {Number (px)} $tipo-context [$tipo-fs0] - needed for pourcent and em
-@mixin tipo($tipo-fs, $tipo-unit: $tipo-prefered-unit, $tipo-context: $tipo-fs0) {
+@mixin tipo($tipo-fs, $tipo-unit: $tipo-default-unit, $tipo-context: $tipo-fs0) {
   font-size:     tipo-size($tipo-fs, $tipo-unit, $tipo-context);
   line-height:   tipo-size(tipo-lines($tipo-fs) * $tipo-lh, $tipo-unit, $tipo-fs);
 }
