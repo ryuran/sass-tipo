@@ -1,6 +1,6 @@
 {
-  "name": "sass-mq",
-  "description": "mq() is a Sass mixin that helps manipulating media queries in an elegant way.",
+  "name": "sass-typo",
+  "description": "",
   "version": "0.0.0",
   "keywords": [
     "sass"
