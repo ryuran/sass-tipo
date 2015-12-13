@@ -13,16 +13,16 @@
   ],
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/ryuran/tipo/issues"
+    "url": "https://github.com/ryuran/sass-tipo/issues"
   },
   "repository": [
     {
       "type": "git",
-      "url": "https://github.com/ryuran/tipo.git"
+      "url": "https://github.com/ryuran/sass-tipo.git"
     }
   ],
   "license": "unlicense",
-  "homepage": "http://ryuran.github.io/tipo/",
+  "homepage": "http://ryuran.github.io/sass-tipo/",
   "devDependencies": {
     "sassdoc": "^2.1.18"
   }
