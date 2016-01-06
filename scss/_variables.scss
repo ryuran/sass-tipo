@@ -1,14 +1,10 @@
 // Variables
 //
-// Suffixées par ` !default`
+// Sufixed by ` !default`
 //
-// Ces variables seront utilisées de nombreuses fois, aussi elles portent des noms qui restent compréhensible mais qui sont le plus court possible.
+// This variables will be used many times. There names must be simple, short and easy to remind.
 
-
-/// L’unité qui fait référence pour s’entendre avec la partie graphique reste le pixel. Aussi, sur la partie configuration, toutes les variables (sauf exception) doivent être exprimées avec cette unité.
-///
-/// Il est conseillé ensuite de transformer les valeurs en pixels : em, rem ou %. (Par défaut, c’est le em qui est utilisé.) Pour cela des fonctions sont proposées.
-///
+/// Unit of reference in the project
 /// @type String
 $tipo-default-unit: 'rem' !default;
 
@@ -21,7 +17,7 @@ $tipo-bfs: 16px !default;
 /// @type Number (unit)
 $tipo-fs0: $tipo-bfs !default;
 
-/// Ratios basés sur les intervalles musicaux utilisés à différents endroits du projet.
+/// Ratio based on musical intervals used for calculate typographic scale.
 /// @type Map
 $tipo-ratios:(
   double-octave:    1/4,         // 0.25
@@ -44,23 +40,22 @@ $tipo-ratios:(
   prime:            1/1          // 1
 ) !default;
 
-/// Hauteur de ligne.
+/// Line height
 /// @type Number (unit)
 $tipo-lh: round($tipo-fs0 / map-get($tipo-ratios, fifth)) !default;
 
-/// Le ratio choisi pour les calculs
+/// Ratio choosen for calculate typographic scale
 /// @type Number
 $tipo-ratio: map-get($tipo-ratios, fifth) !default;
 
-/// Le nombre important principal
+/// First important number
 /// @type Number (unit)
 $tipo-number1: $tipo-fs0 * 1 !default;
 
-/// Le nombre important secondaire
+/// Second important number
 /// @type Number (unit)
 $tipo-number2: $tipo-fs0 * 2 !default;
 
-/// Le décalage inital sur les échelles
+/// Inital offset on the typographic scale
 /// @type Number
 $tipo-offset: 0 !default;
-

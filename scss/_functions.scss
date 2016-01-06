@@ -1,8 +1,8 @@
-/// Suppresion de l’unité
+/// Remove unit of a value
 ///
-/// @param {Number} $tipo-number - variable (avec ou sans unité)
+/// @param {Number} $tipo-number - variable (with or without unit)
 ///
-/// @return {Number} variable sans unité retournée.
+/// @return {Number} variable without unit.
 @function tipo-strip-unit($tipo-number) {
   @return $tipo-number / ($tipo-number * 0 + 1);
 }
@@ -12,7 +12,7 @@
 /// @param {Number (px)} $tipo-px - size in pixels
 /// @param {Number (px)} $tipo-context [$tipo-fs0] - context in pixels
 ///
-/// @return {Number (em)} équivalence en `ems` retournée.
+/// @return {Number (em)} value in `em`
 @function tipo-em($tipo-px, $tipo-context: $tipo-fs0) {
   @return(tipo-strip-unit($tipo-px) / tipo-strip-unit($tipo-context) * 1em);
 }
@@ -21,7 +21,7 @@
 ///
 /// @param {Number (px)} $tipo-px - size in pixels
 ///
-/// @return {Number (pt)} équivalence en points retournée.
+/// @return {Number (pt)} value in `pt`.
 @function tipo-pt($tipo-px) {
   @return(tipo-strip-unit($tipo-px) * map-get($tipo-ratios, fourth)  * 1pt);
 }
@@ -30,28 +30,28 @@
 ///
 /// @param {Number (px)} $tipo-px - size in pixels
 ///
-/// @return {Number (rem)} équivalence en `rems` retournée.
+/// @return {Number (rem)} value in `rem`
 @function tipo-rem($tipo-px) {
   @return(tipo-strip-unit($tipo-px) / tipo-strip-unit($tipo-bfs) * 1rem);
 }
 
 /// Convert pixels to percentages
 ///
-/// @param {} $tipo-px - variable en pixels passée en paramètre
+/// @param {} $tipo-px - size in pixels
 /// @param {} $tipo-context [$tipo-fs0] - context in pixels
 ///
-/// @return {Number (%)} équivalence en pourcentage retournée.
+/// @return {Number (%)} value in `%`
 @function tipo-pourcent($tipo-px, $tipo-context: $tipo-fs0) {
   @return(tipo-strip-unit($tipo-px) * 100 / tipo-strip-unit($tipo-context) * 1%);
 }
 
-/// Calcul de taille dans l’unité de son choix
+/// Size calculation in the choosen unit
 ///
-/// @param {Number (px)} $tipo-px - variable en pixels passée en paramètre
-/// @param {String} $tipo-unit - unité choisie (par défaut égale à l’unité préférée du projet)
-/// @param {Number (px)} $tipo-context - context de travail en pixels (par défaut égal à la taille de texte du projet)
+/// @param {Number (px)} $tipo-px - size in pixels
+/// @param {String} $tipo-unit [$tipo-default-unit] - choosen unit
+/// @param {Number (px)} $tipo-context [$tipo-fs0] - context in pixels
 ///
-/// @return {Number (unit)} taille en `em`, en `rem`, en `pt`, en `%` ou en `px` en fonction de `$tipo-unit`.
+/// @return {Number (unit)} Size in `em`, `rem`, `pt`, `%` or `px` depending on `$tipo-unit`
 @function tipo-size($tipo-px, $tipo-unit: $tipo-default-unit, $tipo-context: $tipo-fs0) {
   @if $tipo-unit == 'em' {
     @return tipo-em($tipo-px, $tipo-context);
@@ -75,28 +75,31 @@
 }
 
 
-/// Calculer le nombre de lignes nécessaires
+/// Number of line calculation
 ///
-/// @param {Number (px)} $tipo-font-size - taille du texte en pixels passée en paramètre
-/// @param {Number (px)} $tipo-line-height - hauteur de ligne
+/// @param {Number (px)} $tipo-font-size - size in `px`
+/// @param {Number (px)} $tipo-line-height - line height
 ///
-/// @return {Number} nombre de lignes nécessaires pour afficher.
+/// @return {Number} number of line needed by the font size
 @function tipo-lines($tipo-font-size, $tipo-line-height: $tipo-lh) {
   $tipo-lines: ceil(2 * $tipo-font-size / $tipo-line-height) / 2;
+
+  // TODO: variable in config for O.5 adjustment $tipo-gap of line-height
   $tipo-gap: 2px;
 
   @if ($tipo-lines * $tipo-line-height - $tipo-font-size) < $tipo-gap {
+    // TODO: variable in config for O.5 adjustment
     $tipo-lines: $tipo-lines + 0.5;
   }
 
   @return $tipo-lines;
 }
 
-/// Fournir une taille issue de l’échelle typographique
+/// Get a size from the typographic scale
 ///
-/// @param {Number} $tipo-level - niveau demandé sur l’échelle typographique (passé en paramètre) (par défaut égal à 0)
+/// @param {Number} $tipo-level [0] - level of typographic scale asked
 ///
-/// @return {Number (px)} taille en pixels.
+/// @return {Number (px)} size in `px`
 @function tipo-scale($tipo-level: 0) {
   $tipo-start: nth($tipo-scale1, $tipo-amplitude + 1);
 
@@ -104,9 +107,11 @@
 }
 
 
-/// Remove duplicates entries in a list
+/// Remove duplicated entries in a list
 ///
-/// @return {List} list whitout duplicate entry
+/// @param {List} $list - a list
+///
+/// @return {List} list whitout duplicated entry
 @function tipo-uniq($list) {
   $uniq-list: ();
 
@@ -120,6 +125,8 @@
 }
 
 /// Sort a list (of number)
+///
+/// @param {List} $list - list to sort
 ///
 /// @return {List} sorted list
 @function tipo-sort($list) {

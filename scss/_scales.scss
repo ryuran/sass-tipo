@@ -1,13 +1,13 @@
-/// Taille des échelles
+/// Range of typographic scale
 $tipo-amplitude: 10 !default;
 
-// Première échelle typographique
+// First typographic scale
 $tipo-scale1: $tipo-number1;
 
-// Seconde échelle typographique
+// Second typographic scale
 $tipo-scale2: $tipo-number2;
 
-// On calcule dans un premier temps les deux échelles.
+// In a first time, we calculate the two scales.
 $tipo-i: 0;
 
 @while $tipo-i < $tipo-amplitude {
@@ -26,7 +26,7 @@ $tipo-i: 0;
   $tipo-i: $tipo-i + 1;
 }
 
-// Puis elles sont fusionnées, triées et les doublons sont supprimés.
+// Then they are merged, sorted and duplicated entries are removed.
 
 $tipo-scale: tipo-sort(join($tipo-scale1, $tipo-scale2));
 
@@ -39,7 +39,7 @@ $tipo-roundscale: ();
 $tipo-scale: $tipo-roundscale;
 $tipo-scale: tipo-uniq($tipo-scale);
 
-// Des variables sont crées pour pouvoir être réutilisés plus facilement dans le projet.
+// Some variables to use in the project.
 $tipo-h1:      tipo-scale( 8) !default;
 $tipo-h2:      tipo-scale( 7) !default;
 $tipo-h3:      tipo-scale( 6) !default;
