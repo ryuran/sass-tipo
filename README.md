@@ -4,7 +4,7 @@
 ##Manage typographic rules
 
 * __Vertical rythm:__ keep line height in the rythm
-* __Tipographic scale:__ coherent font-size
+* __Typographic scale:__ coherent font-size
 
 
 ##Pixel in code but better in live
