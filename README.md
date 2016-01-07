@@ -1,4 +1,4 @@
-# Sass‑Tipo
+# Sass‑Tipo [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 
 
 ##Manage typographic rules
