@@ -20,3 +20,9 @@ If you choose `rem` don’t forget old Internet Explorer. Use a post processor.
 
 ##Thanks
 Thanks to @htmlzengarden for smash a more complete project at origin of Sass‑Tipo
+
+[npm-url]: https://npmjs.org/package/sass-tipo
+[npm-image]: https://badge.fury.io/js/sass-tipo.png
+
+[depstat-url]: https://david-dm.org/ryuran/sass-tipo
+[depstat-image]: https://david-dm.org/ryuran/sass-tipo.png
